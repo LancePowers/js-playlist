@@ -2,9 +2,8 @@ var Song = require('./song');
 
 var Playlist = function(){
   this.songs = [];
-  this.songNameArray = [];
   this.queue = [];
-  this.currentSong = [];
+  this.currentSong = null;
 };
 Playlist.prototype.addSong = function(song){
   this.songs.push(song);
@@ -26,7 +25,7 @@ Playlist.prototype.swap = function(song1, song2){
 }
 
 Playlist.prototype.nowPlaying = function(){
-  if( this.currentSong === undefined){return null;}
+  if(this.currentSong === undefined){return null;}
   return this.currentSong;
 }
 
@@ -65,11 +64,11 @@ Playlist.prototype.isEmpty = function () {
   }
 };
 Playlist.prototype.songNames = function () {
-  this.songNameArray = [];
+  var songNameArray = [];
   for (var i = 0; i < this.songs.length; i++) {
-    this.songNameArray.push(this.songs[i].name);
+    songNameArray.push(this.songs[i].name);
   }
-  return this.songNameArray;
+  return songNameArray;
 }
 
 Playlist.prototype.forNumber = function () {
