@@ -12,15 +12,15 @@ describe('Playlist', function() {
   //
   //   expect(playlist.isEmpty()).toEqual(true);
   // });
-
-  it("allows you to add a song", function() {
-    var playlist = new Playlist();
-
-    playlist.addSong(itHadToBeYou)
-
-    expect(playlist.isEmpty()).toEqual(false);
-  });
-
+  //
+  // it("allows you to add a song", function() {
+  //   var playlist = new Playlist();
+  //
+  //   playlist.addSong(itHadToBeYou)
+  //
+  //   expect(playlist.isEmpty()).toEqual(false);
+  // });
+  //
   // it("allows you to see all song names in the order they were added", function() {
   //   var playlist = new Playlist();
   //
@@ -36,30 +36,30 @@ describe('Playlist', function() {
   //   ]);
   // });
 
-  // it("allows you remove a song from the playlist", function() {
-  //   var playlist = new Playlist();
-  //
-  //   playlist.addSong(itHadToBeYou);
-  //   expect(playlist.isEmpty()).toEqual(false);
-  //
-  //   playlist.addSong(butNotForMe);
-  //
-  //   expect(playlist.songNames()).toEqual([
-  //     'It had to be you',
-  //     'But Not for Me',
-  //   ]);
-  //
-  //   playlist.removeSong(itHadToBeYou)
-  //   expect(playlist.songNames()).toEqual([
-  //     'But Not for Me',
-  //   ]);
-  //   expect(playlist.isEmpty()).toEqual(false);
-  //
-  //   playlist.removeSong(butNotForMe)
-  //
-  //   expect(playlist.songNames()).toEqual([]);
-  //   expect(playlist.isEmpty()).toEqual(true);
-  // });
+  it("allows you remove a song from the playlist", function() {
+    var playlist = new Playlist();
+
+    playlist.addSong(itHadToBeYou);
+    expect(playlist.isEmpty()).toEqual(false);
+
+    playlist.addSong(butNotForMe);
+  
+    expect(playlist.songNames()).toEqual([
+      'It had to be you',
+      'But Not for Me',
+    ]);
+
+    playlist.removeSong(itHadToBeYou)
+    expect(playlist.songNames()).toEqual([
+      'But Not for Me',
+    ]);
+    expect(playlist.isEmpty()).toEqual(false);
+
+    playlist.removeSong(butNotForMe)
+
+    expect(playlist.songNames()).toEqual([]);
+    expect(playlist.isEmpty()).toEqual(true);
+  });
 
   //
   // it("tells you the total length of the playlist", function() {
