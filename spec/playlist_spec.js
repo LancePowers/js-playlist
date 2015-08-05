@@ -7,19 +7,19 @@ describe('Playlist', function() {
   var butNotForMe = new Song('But Not for Me', 50);
   var autumnInNewYork = new Song('Autumn In New York', 25);
 
-  it("is empty by default", function() {
+  // it("is empty by default", function() {
+  //   var playlist = new Playlist();
+  //
+  //   expect(playlist.isEmpty()).toEqual(true);
+  // });
+
+  it("allows you to add a song", function() {
     var playlist = new Playlist();
 
-    expect(playlist.isEmpty()).toEqual(true);
-  });
+    playlist.addSong(itHadToBeYou)
 
-  // it("allows you to add a song", function() {
-  //   var playlist = new Playlist();
-  // 
-  //   playlist.addSong(itHadToBeYou)
-  //
-  //   expect(playlist.isEmpty()).toEqual(false);
-  // });
+    expect(playlist.isEmpty()).toEqual(false);
+  });
 
   // it("allows you to see all song names in the order they were added", function() {
   //   var playlist = new Playlist();
